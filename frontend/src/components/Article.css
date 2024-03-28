@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Alpino", sans-serif;
+  overflow-y: hidden;
+}
+.list_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vmin;
+  margin-left: 5vmin;
+  width: 95vw;
+  height: 7vh;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}
+
+.list_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  
+  border-bottom: 1px solid #ddd; /* Add border between each list item */
+}
+
+.list_inner:last-child {
+  border-bottom: none; /* Remove border from the last list item */
+}
+
+.list_item {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+.list_item {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.list_item {
+  scrollbar-width: none;
+  scrollbar-color: transparent;
+  overflow-x: scroll; /* Enable horizontal scroll if content overflows */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+.red_circle {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%; /* Ensures the element is a circle */
+  margin: auto; /* Center the red circle horizontally */
+}
+
+.list_top {
+  display: flex;
+  justify-content: space-between; /* Align items evenly */
+  color: white;
+  margin-top: 5vmin;
+}
+.list_heading{
+  color: #FFF;
+font-family: Rockwell;
+margin-top: 20px;
+margin-left: 30px;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
