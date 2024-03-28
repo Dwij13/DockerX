@@ -1,4 +1,5 @@
 import './App.css'
+import Home from './components/Home'
 import Lists from './components/Lists'
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
 
   return (
     <>
-      <Lists />
+      {/* <Lists /> */}
+      <Home />
     </>
   )
 }
