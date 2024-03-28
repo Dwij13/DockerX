@@ -139,7 +139,8 @@ app.get("/containers/:id", async (req, res) => {
   const containerId = req.params.id;
   try {
     const container = docker.getContainer(containerId);
-    res.send(container);
+    const containerInfo = await container.inspect();
+    res.send(containerInfo);
   } catch (error) {
     res.status(500).send(`Error getting logs: ${error}`);
   }
