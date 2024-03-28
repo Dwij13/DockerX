@@ -13,7 +13,7 @@ This project requires Node.js and npm (or yarn) to be installed on your system. 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/DockerX.git
+   git clone https://github.com/Dwij13/DockerX.git
    cd DockerX
 
 
