@@ -36,21 +36,13 @@ app.get("/containers/:id/status", async (req, res) => {
   const containerId = req.params.id;
   try {
     const container = docker.getContainer(containerId);
-    container.stats((err, stream) => {
-      if (err) {
-        console.error(`Error getting container stats: ${err}`);
-        res.status(500).send(`Error getting container stats: ${err}`);
-      }
-      stream.on("data", (data) => {
-        const { cpu_stats, memory_stats, cpuUsage, memoryUsage } = JSON.parse(
-          data.toString()
-        );
-
-        res.send({ cpu_stats, memory_stats, cpuUsage, memoryUsage });
-      });
-    });
+    const stats = await container.stats({stream: false});
+    const cpu_stats = stats.cpu_stats;
+    const memory_stats = stats.memory_stats;
+    res.send({ cpu_stats, memory_stats });
   } catch (error) {
-    res.status(500).send(`Error starting container: ${error}`);
+    console.error(`Error getting container stats: ${error}`);
+    res.status(500).send(`Error getting container stats: ${error}`);
   }
 });
 
@@ -91,6 +83,16 @@ app.get("/containers/running", async (req, res) => {
     res.send(containers);
   } catch (error) {
     res.status(500).send(`Error listing running containers: ${error}`);
+  }
+});
+app.delete("/containers/:id", async (req, res) => {
+  const containerId = req.params.id;
+  try {
+    const container = docker.getContainer(containerId);
+    await container.remove();
+    res.send(`Container ${containerId} deleted successfully`);
+  } catch (error) {
+    res.status(500).send(`Error deleting container: ${error}`);
   }
 });
 
