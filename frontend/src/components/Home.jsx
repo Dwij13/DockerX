@@ -2,10 +2,11 @@ import React from "react";
 import "./Home.css";
 import image1 from "../assets/visual_data.png";
 import image2 from "../assets/charts.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <div className="heading">
         <h1>Welcome To DockersX</h1>
       </div>
@@ -16,7 +17,9 @@ const Home = () => {
         </h4>
       </div>
       <div className="start">
-        <button className="btn">Get Started</button>
+        <Link to={"/containers"}>
+          <button className="btn">Get Started</button>
+        </Link>
       </div>
       <div className="img">
         <img src={image1} alt="" />

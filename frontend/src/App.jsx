@@ -1,17 +1,11 @@
-import './App.css'
-import Article from './components/Article'
-import Home from './components/Home'
-import Lists from './components/Lists'
+import "./App.css";
+import Allroutes from "./components/Allroutes";
 function App() {
-  
-
   return (
     <>
-      {/* <Lists /> */}
-      {/* <Home /> */}
-      <Article/>
+      <Allroutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

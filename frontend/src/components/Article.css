@@ -17,14 +17,14 @@ body {
   height: 7vh;
   flex-shrink: 0;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .list_inner {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  
+  justify-content: center;
+
   border-bottom: 1px solid #ddd; /* Add border between each list item */
 }
 
@@ -50,13 +50,19 @@ body {
   white-space: nowrap; /* Prevent text wrapping */
 }
 
-
 .red_circle {
   width: 20px;
   height: 20px;
   background-color: red;
-  border-radius: 50%; /* Ensures the element is a circle */
-  margin: auto; /* Center the red circle horizontally */
+  border-radius: 50%;
+  margin: auto;
+}
+.green_circle {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+  margin: auto;
 }
 
 .list_top {
@@ -65,13 +71,13 @@ body {
   color: white;
   margin-top: 5vmin;
 }
-.list_heading{
-  color: #FFF;
-font-family: Rockwell;
-margin-top: 20px;
-margin-left: 30px;
-font-size: 48px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+.list_heading {
+  color: #fff;
+  font-family: Rockwell;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

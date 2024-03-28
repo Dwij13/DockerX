@@ -7,7 +7,11 @@ body {
   font-family: "Alpino", sans-serif;
   overflow-y: hidden;
 }
-
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .heading {
   margin-top: 13vh;
   text-align: center;
