@@ -4,6 +4,9 @@ const docker = new Docker();
 const express = require("express");
 const app = express();
 const port = 6969;
+const cors = require("cors");
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -36,7 +39,7 @@ app.get("/containers/:id/status", async (req, res) => {
   const containerId = req.params.id;
   try {
     const container = docker.getContainer(containerId);
-    const stats = await container.stats({stream: false});
+    const stats = await container.stats({ stream: false });
     const cpu_stats = stats.cpu_stats;
     const memory_stats = stats.memory_stats;
     res.send({ cpu_stats, memory_stats });
