@@ -17,6 +17,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import axios from "axios";
+import Container from "./Container";
 
 export default function AllRoutes() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -91,6 +92,7 @@ export default function AllRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/containers" element={<Article />} />
         {/* Removed ChatAi route as its functionality is now integrated within the modal */}
+        <Route path="/containers/:id" element={<Container />} />
       </Routes>
     </>
   );

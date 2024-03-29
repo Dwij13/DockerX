@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Article.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import ToggleSwitch from "./Switch";
 
 const Article = () => {
   const [containers, setContainers] = useState([]);
+  const Navigate = useNavigate();
   useEffect(() => {
     axios
       .get("http://localhost:6969/containers")
@@ -42,12 +43,17 @@ const Article = () => {
       </div>
       {containers.map((e) => {
         return (
-          <div className="list_group">
-
+          <div
+            className="list_group"
+            onClick={() => Navigate(`/containers/${e.Id}`)}
+          >
             <div className="list_inner">
-            <div className="list_item">
-            <ToggleSwitch defaultChecked={e.State === 'running'} id={e.Id} />
-            </div>
+              <div className="list_item">
+                <ToggleSwitch
+                  defaultChecked={e.State === "running"}
+                  id={e.Id}
+                />
+              </div>
               <div className="list_item">{e.Names}</div>
               <div className="list_item">{e.Image}</div>
               <div className="list_item">{e.State}</div>
@@ -56,8 +62,7 @@ const Article = () => {
                   className={`${
                     e.State == "running" ? "green_circle" : "red_circle"
                   }`}
-                >
-                </div>
+                ></div>
               </div>
               <div className="list_item">
                 {e.NetworkSettings.Networks.bridge.IPAddress == ""
