@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+} from "recharts";
 import { useParams } from "react-router";
 import axios from "axios";
 
@@ -28,7 +36,7 @@ export default function Container() {
           name: index,
           usage: stat.total_usage,
         }));
-        console.log("Formatted CPU Usage Data:", formattedData); // Log formatted data
+        console.log("Formatted CPU Usage Data:", formattedData);
         setCpuUsage(formattedData);
       })
       .catch((err) => {
@@ -36,7 +44,7 @@ export default function Container() {
       });
   }, [id]);
 
-  console.log("CPU Usage Data:", cpuUsage); // Log CPU usage data
+  console.log("CPU Usage Data:", cpuUsage);
 
   return (
     <div>

@@ -40,9 +40,7 @@ export default function AllRoutes() {
         }
       );
 
-      const data = await response["data"]["candidates"][0]["content"][
-        "parts"
-      ][0]["text"];
+      const data = response.data.candidates[0].content.parts[0].text;
       setAiResponse(data);
     } catch (error) {
       console.error("Error fetching AI response:", error);
@@ -85,9 +83,8 @@ export default function AllRoutes() {
               Resolve with AI
             </Text>
           </ModalHeader>
-          {/* <ModalCloseButton /> */}
           <ModalBody>
-            <VStack spacing={4}>
+            <VStack spacing={4} alignItems="center">
               <Flex>
                 <Input
                   placeholder="Ask me anything..."
@@ -107,25 +104,24 @@ export default function AllRoutes() {
                   height={"5vh"}
                   border="none"
                   marginLeft="-1px"
-                  // borderRadius="10px"
                   backgroundColor="#a841b8"
                   color="white"
-                  // marginBottom={"2vmax"}
                   mt={4}
                 >
                   Submit
                 </Button>
               </Flex>
-              {aiResponse && (
-                <Text
-                  margin={"10px 0 10px 20px"}
-                  color="white"
-                  overflow-y={"scroll"}
-                  mt={4}
-                >
-                  {aiResponse}
-                </Text>
-              )}
+              <Text
+                color="white"
+                overflowY="auto"
+                maxHeight="200px"
+                width="90%"
+                padding="10px"
+                border="1px solid #ccc"
+                borderRadius="5px"
+              >
+                {aiResponse}
+              </Text>
             </VStack>
           </ModalBody>
 
