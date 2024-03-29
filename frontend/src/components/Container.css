@@ -70,7 +70,7 @@ list_item {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   font-size: 1.5vmax;
 }
 .assess {
