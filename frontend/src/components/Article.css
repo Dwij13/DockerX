@@ -5,7 +5,7 @@
 }
 body {
   font-family: "Alpino", sans-serif;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .list_group {
   display: flex;
@@ -90,8 +90,8 @@ svg {
 .list_heading {
   color: #fff;
   font-family: Rockwell;
-  margin-top: 20px;
-  margin-left: 30px;
+  padding-top: 20px;
+  padding-left: 30px;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
