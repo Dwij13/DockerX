@@ -17,6 +17,7 @@ body {
   margin-left: 4vmin;
   width: 95vw;
   height: 7vh;
+  z-index: -1;
   flex-shrink: 0;
   border-radius: 10px;
   background-color: #ffffff;

@@ -3,6 +3,7 @@
   display: inline-block;
   width: 50px;
   height: 25px;
+  z-index: 1;
 }
 
 .toggle-switch-checkbox {

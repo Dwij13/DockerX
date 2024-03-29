@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Article.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import ToggleSwitch from "./Switch";
+import { Button } from "@chakra-ui/button";
 
 const Article = () => {
   const [containers, setContainers] = useState([]);
@@ -39,14 +40,11 @@ const Article = () => {
         <div className="list_item">State</div>
         <div className="list_item">Running</div>
         <div className="list_item">Ip Address</div>
-        <div className="list_item">Status</div>
+        <div className="list_item">View</div>
       </div>
       {containers.map((e) => {
         return (
-          <div
-            className="list_group"
-            onClick={() => Navigate(`/containers/${e.Id}`)}
-          >
+          <div className="list_group">
             <div className="list_inner">
               <div className="list_item">
                 <ToggleSwitch
@@ -69,7 +67,19 @@ const Article = () => {
                   ? "Not connected"
                   : e.NetworkSettings.Networks.bridge.IPAddress}
               </div>
-              <div className="list_item">{e.Status}</div>
+              <div className="list_item">
+                <Button
+                  border="none"
+                  backgroundColor="purple"
+                  color="white"
+                  padding="0.7vmax"
+                  borderRadius="15px"
+                  cursor="pointer"
+                  onClick={() => Navigate(`/containers/${e.Id}`)}
+                >
+                  View details
+                </Button>
+              </div>
             </div>
           </div>
         );
