@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^4.4.2",
     "cors": "^2.8.5",
     "dockerode": "^4.0.2",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "react-chartjs-2": "^5.2.0"
   }
 }
