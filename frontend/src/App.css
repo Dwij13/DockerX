@@ -1,5 +1,5 @@
 .chatBtn {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   background-color: #d900ff;
@@ -9,6 +9,8 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .app-div {
   min-height: 100vh;
 }
+
