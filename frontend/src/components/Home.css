@@ -37,7 +37,6 @@ body {
 .start {
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
 }
 
 .btn {
@@ -55,7 +54,6 @@ body {
 
 img {
   height: 30vh;
-  margin-top: 20px;
 }
 
 .img {
