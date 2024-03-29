@@ -42,6 +42,9 @@ svg {
   /* color: #fff; */
   /* background-color: #fff; */
 }
+.article-div {
+  flex: 1;
+}
 
 .list_inner {
   display: flex;
