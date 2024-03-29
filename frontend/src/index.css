@@ -1,3 +1,8 @@
 body {
   background: linear-gradient(180deg, #39044b 0.29%, #a007ad 99.88%);
 }
+
+.list_heading {
+  display: flex;
+  gap: 20px;
+}
