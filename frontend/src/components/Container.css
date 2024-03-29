@@ -1,0 +1,47 @@
+.list_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vmin;
+  margin-left: 4vmin;
+  width: 95vw;
+  height: 7vh;
+  z-index: -1;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+list_item {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.list_item {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.list_item {
+  scrollbar-width: none;
+  scrollbar-color: transparent;
+  overflow-x: scroll;
+  /* Enable horizontal scroll if content overflows */
+  white-space: nowrap;
+  /* Prevent text wrapping */
+}
+.list_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid #ddd;
+  /* Add border between each list item */
+}
+
+.list_inner:last-child {
+  border-bottom: none;
+  /* Remove border from the last list item */
+}
