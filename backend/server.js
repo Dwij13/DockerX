@@ -70,6 +70,16 @@ app.post("/containers/:id/stop", async (req, res) => {
     res.status(500).send(`Error stopping container: ${error}`);
   }
 });
+app.post("/containers/:id/restart", async (req, res) => {
+  const containerId = req.params.id;
+  try {
+    const container = docker.getContainer(containerId);
+    await container.restart();
+    res.send(`Container restarted successfully`);
+  } catch (error) {
+    res.status(500).send(`Error restarting container: ${error}`);
+  }
+});
 
 app.get("/containers", async (req, res) => {
   try {
