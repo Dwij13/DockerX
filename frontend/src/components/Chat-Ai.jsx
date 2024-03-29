@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Chat-Ai.css";
 
 const ChatAi = () => {
   const [count, setCount] = useState(0);
