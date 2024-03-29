@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { IoArrowBack } from "react-icons/io5";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 // import { Bar } from "react-chartjs-2";
@@ -117,7 +118,14 @@ export default function Container() {
   return (
     <div>
       <div className="top-div">
-        <div className="head">Container Information</div>
+        <div className="head">
+          <IoArrowBack
+            color="white"
+            size="2rem"
+            cursor="pointer"
+            onClick={() => navigator(-1)}
+          />
+        </div>
         <div className="list_group">
           <div className="list_inner">
             <div className="list_item">
