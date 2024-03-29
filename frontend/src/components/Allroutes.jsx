@@ -14,6 +14,7 @@ import {
   useDisclosure,
   Input,
   Text,
+  Flex,
   VStack,
 } from "@chakra-ui/react";
 import axios from "axios";
@@ -61,28 +62,86 @@ export default function AllRoutes() {
       </button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Resolve with AI</ModalHeader>
-          <ModalCloseButton />
+        <ModalOverlay sx={{ backdropFilter: "blur(2px)" }} />
+        <ModalContent
+          padding={"30px"}
+          width="45vmax"
+          backgroundColor="purple"
+          margin="auto"
+          borderRadius="15px"
+          position="fixed"
+          top="15%"
+          left="25%"
+          transform="translate(-50%, -50%)"
+        >
+          <ModalHeader>
+            <Text
+              textAlign="center"
+              padding={"20px"}
+              fontSize="25px"
+              fontWeight="800"
+              color="white"
+            >
+              Resolve with AI
+            </Text>
+          </ModalHeader>
+          {/* <ModalCloseButton /> */}
           <ModalBody>
             <VStack spacing={4}>
-              <Input
-                placeholder="Ask me anything..."
-                value={userInput}
-                onChange={handleInputChange}
-                size="lg"
-                variant="filled"
-              />
-              <Button onClick={handleSubmit} mt={4}>
-                Submit
-              </Button>
-              {aiResponse && <Text mt={4}>{aiResponse}</Text>}
+              <Flex>
+                <Input
+                  placeholder="Ask me anything..."
+                  value={userInput}
+                  onChange={handleInputChange}
+                  height={"5vh"}
+                  width={"28vw"}
+                  textIndent={"10px"}
+                  marginTop={"4px"}
+                  size="lg"
+                  outline="none"
+                  variant="filled"
+                />
+                <Button
+                  onClick={handleSubmit}
+                  width={"11vmax"}
+                  height={"5vh"}
+                  border="none"
+                  marginLeft="-1px"
+                  // borderRadius="10px"
+                  backgroundColor="#a841b8"
+                  color="white"
+                  // marginBottom={"2vmax"}
+                  mt={4}
+                >
+                  Submit
+                </Button>
+              </Flex>
+              {aiResponse && (
+                <Text
+                  margin={"10px 0 10px 20px"}
+                  color="white"
+                  overflow-y={"scroll"}
+                  mt={4}
+                >
+                  {aiResponse}
+                </Text>
+              )}
             </VStack>
           </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <ModalFooter justifyContent="center">
+            <Button
+              justifyContent="center"
+              width={"8vmax"}
+              marginTop={"7vmax"}
+              borderRadius="10px"
+              height={"4vh"}
+              border="none"
+              color="white"
+              backgroundColor="#a841b8"
+              mr={3}
+              onClick={onClose}
+            >
               Close
             </Button>
           </ModalFooter>
