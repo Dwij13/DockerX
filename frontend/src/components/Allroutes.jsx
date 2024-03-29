@@ -52,7 +52,7 @@ export default function AllRoutes() {
 
   const handleSubmit = () => {
     fetchAiResponse();
-    setUserInput(""); // Clear input after submission
+    setUserInput("");
   };
 
   return (
@@ -150,7 +150,6 @@ export default function AllRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/containers" element={<Article />} />
-        {/* Removed ChatAi route as its functionality is now integrated within the modal */}
         <Route path="/containers/:id" element={<Container />} />
       </Routes>
     </>
