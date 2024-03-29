@@ -34,7 +34,13 @@ export default function AllRoutes() {
         {
           contents: [
             {
-              parts: [{ text: userInput + " Can you correct the docker code" }],
+              parts: [
+                {
+                  text:
+                    userInput +
+                    " Does this docker file has any error if so correct the error and give me the corrected code , else tell me that it doesn't has any error",
+                },
+              ],
             },
           ],
         }
