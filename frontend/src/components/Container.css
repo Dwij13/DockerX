@@ -71,4 +71,11 @@ list_item {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5vmax;
+}
+.assess {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6vmax;
 }
