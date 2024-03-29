@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Article.css";
 import { Link } from "react-router-dom";
+import ToggleSwitch from "./Switch";
 
 const Article = () => {
   const [containers, setContainers] = useState([]);
@@ -31,6 +32,7 @@ const Article = () => {
         </div>
       </Link>
       <div className="list_top">
+        <div className="list_item">Start/Stop</div>
         <div className="list_item">Container</div>
         <div className="list_item">Image Name</div>
         <div className="list_item">State</div>
@@ -41,7 +43,11 @@ const Article = () => {
       {containers.map((e) => {
         return (
           <div className="list_group">
+
             <div className="list_inner">
+            <div className="list_item">
+            <ToggleSwitch defaultChecked={e.State === 'running'} />
+            </div>
               <div className="list_item">{e.Names}</div>
               <div className="list_item">{e.Image}</div>
               <div className="list_item">{e.State}</div>
@@ -50,7 +56,8 @@ const Article = () => {
                   className={`${
                     e.State == "running" ? "green_circle" : "red_circle"
                   }`}
-                ></div>
+                >
+                </div>
               </div>
               <div className="list_item">
                 {e.NetworkSettings.Networks.bridge.IPAddress == ""
