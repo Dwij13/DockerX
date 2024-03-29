@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
-// import { Bar } from "react-chartjs-2";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import "./Container.css";
@@ -149,9 +148,10 @@ export default function Container() {
             <Button
               padding="1vmax"
               border="none"
+              fontWeight={"bold"}
               borderRadius="13px"
               width="6vmax"
-              backgroundColor="purple"
+              backgroundColor="green"
               color="white"
               cursor="pointer"
               onClick={startContainer}
@@ -161,10 +161,11 @@ export default function Container() {
             <Button
               padding="1vmax"
               border="none"
+              fontWeight={"bold"}
               borderRadius="13px"
               width="6vmax"
-              backgroundColor="purple"
-              color="white"
+              backgroundColor="yellow"
+              color="black"
               cursor="pointer"
               onClick={stopContainer}
             >
@@ -177,7 +178,8 @@ export default function Container() {
               border="none"
               borderRadius="13px"
               width="6vmax"
-              backgroundColor="purple"
+              fontWeight={"bold"}
+              backgroundColor="blue"
               color="white"
               cursor="pointer"
               onClick={restartContainer}
@@ -189,8 +191,9 @@ export default function Container() {
               border="none"
               borderRadius="13px"
               width="6vmax"
+              fontWeight={"bold"}
               cursor="pointer"
-              backgroundColor="purple"
+              backgroundColor="red"
               color="white"
               onClick={deleteContainer}
             >
@@ -198,25 +201,30 @@ export default function Container() {
             </Button>
           </div>
         </div>
-        <h2 className="head">CPU Usage Graph</h2>
         <div className="graph">
           <div className="dataCard">
-            <Line
-              data={{
-                labels: cpuUsage.map((usage, index) => `Core ${index + 1}`),
-                datasets: [
-                  {
-                    label: "CPU USAGE",
-                    data: cpuUsage.map((usage) => usage / 1000000),
-                    fill: false,
-                    backgroundColor: "rgb(255,255,255)",
-                    borderColor: "rgba(75,192,192,1)",
-                    tension: 0.1,
-                  },
-                ],
-              }}
-            />
-            <Doughnut data={doughnutData} />
+            <div>
+              <h2 className="head">CPU Usage Graph</h2>
+              <Line
+                data={{
+                  labels: cpuUsage.map((usage, index) => `Core ${index + 1}`),
+                  datasets: [
+                    {
+                      label: "CPU USAGE",
+                      data: cpuUsage.map((usage) => usage / 1000000),
+                      fill: false,
+                      backgroundColor: "rgb(255,255,255)",
+                      borderColor: "rgba(75,192,192,1)",
+                      tension: 0.1,
+                    },
+                  ],
+                }}
+              />
+            </div>
+            <div>
+              <h2 className="head">CPU Usage Graph</h2>
+              <Doughnut data={doughnutData} />
+            </div>
           </div>
         </div>
       </div>

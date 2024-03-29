@@ -64,7 +64,7 @@ export default function AllRoutes() {
         <ModalContent
           padding={"30px"}
           width="45vmax"
-          backgroundColor="purple"
+          backgroundColor="white"
           margin="auto"
           borderRadius="15px"
           position="fixed"
@@ -78,7 +78,7 @@ export default function AllRoutes() {
               padding={"20px"}
               fontSize="25px"
               fontWeight="800"
-              color="white"
+              color="black"
             >
               Resolve with AI
             </Text>
@@ -87,7 +87,7 @@ export default function AllRoutes() {
             <VStack spacing={4} alignItems="center">
               <Flex>
                 <Input
-                  placeholder="Ask me anything..."
+                  placeholder="Enter you Docker File Code"
                   value={userInput}
                   onChange={handleInputChange}
                   height={"5vh"}
@@ -102,6 +102,7 @@ export default function AllRoutes() {
                   onClick={handleSubmit}
                   width={"11vmax"}
                   height={"5vh"}
+                  cursor={"pointer"}
                   border="none"
                   marginLeft="-1px"
                   backgroundColor="#a841b8"
@@ -112,10 +113,10 @@ export default function AllRoutes() {
                 </Button>
               </Flex>
               <Text
-                color="white"
+                color="black"
                 overflowY="auto"
                 maxHeight="200px"
-                width="90%"
+                width="100%"
                 padding="10px"
                 border="1px solid #ccc"
                 borderRadius="5px"
@@ -129,7 +130,7 @@ export default function AllRoutes() {
             <Button
               justifyContent="center"
               width={"8vmax"}
-              marginTop={"7vmax"}
+              marginTop={"2vmax"}
               borderRadius="10px"
               height={"4vh"}
               border="none"
