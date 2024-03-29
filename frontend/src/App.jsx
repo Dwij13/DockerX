@@ -3,7 +3,9 @@ import Allroutes from "./components/Allroutes";
 function App() {
   return (
     <>
-      <Allroutes />
+      <div className="app-div">
+        <Allroutes />
+      </div>
     </>
   );
 }

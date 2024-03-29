@@ -16,7 +16,7 @@ const Article = () => {
   }, []);
 
   return (
-    <div>
+    <div className="article-div">
       <Link style={{ textDecoration: "none" }} to={"/"}>
         <div className="list_heading">
           <svg
