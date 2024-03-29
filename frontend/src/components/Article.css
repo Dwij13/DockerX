@@ -19,7 +19,23 @@ body {
   border-radius: 10px;
   background-color: #ffffff;
 }
-
+.list_heading {
+  display: flex;
+  align-items: center;
+  /* margin: 10px; */
+}
+.svg-icon {
+  fill: #ffffff; /* Adjust fill color here */
+  width: 5vw;
+  margin-right: 1vw;
+}
+svg {
+  width: 10vw;
+  position: relative;
+  bottom: 8px;
+  /* color: #fff; */
+  /* background-color: #fff; */
+}
 .list_inner {
   display: flex;
   align-items: center;
