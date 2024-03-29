@@ -46,7 +46,7 @@ const Article = () => {
 
             <div className="list_inner">
             <div className="list_item">
-            <ToggleSwitch defaultChecked={e.State === 'running'} />
+            <ToggleSwitch defaultChecked={e.State === 'running'} id={e.Id} />
             </div>
               <div className="list_item">{e.Names}</div>
               <div className="list_item">{e.Image}</div>
