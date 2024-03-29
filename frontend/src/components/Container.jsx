@@ -6,6 +6,8 @@ import axios from "axios";
 export default function Container() {
   const { id } = useParams();
   const [containerData, setData] = useState({});
+  const [cpuUsage, setCpuUsage] = useState({});
+  const [memoryUsage, setMemoryUsage] = useState({});
   useEffect(() => {
     axios
       .get(`http://localhost:6969/containers/${id}`)
@@ -16,8 +18,15 @@ export default function Container() {
         console.log(err);
       });
   }, []);
-
-  console.log(containerData);
+  useEffect(() => {
+    axios.get(`http://localhost:6969/containers/${id}/status`).then((res) => {
+      const result = res.data;
+      setCpuUsage(result.cpu_stats);
+      setMemoryUsage(result.memory_stats);
+    });
+  }, []);
+  console.log(cpuUsage);
+  console.log(memoryUsage);
 
   return <div></div>;
 }
