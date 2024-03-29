@@ -20,14 +20,14 @@ const Article = () => {
 
   return (
     <div className="article-div">
-      <Link style={{ textDecoration: "none" }} to={"/"}>
         <div className="list_heading">
+      <Link style={{ textDecoration: "none" }} to={"/"}>
           <div>
             <Img src="/logo.png" height={40} />
           </div>
+      </Link>
           DockersX's Dashboard
         </div>
-      </Link>
       <div className="list_top">
         <div className="list_item">Start/Stop</div>
         <div className="list_item">Container</div>
