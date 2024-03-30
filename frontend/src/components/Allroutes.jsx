@@ -34,15 +34,19 @@ export default function AllRoutes() {
         {
           contents: [
             {
-              parts: [{ text: userInput + " Can you correct the docker code" }],
+              parts: [
+                {
+                  text:
+                    userInput +
+                    " Does this docker file has any error if so correct the error and give me the corrected code , else tell me that it doesn't has any error",
+                },
+              ],
             },
           ],
         }
       );
 
-      const data = await response["data"]["candidates"][0]["content"][
-        "parts"
-      ][0]["text"];
+      const data = response.data.candidates[0].content.parts[0].text;
       setAiResponse(data);
     } catch (error) {
       console.error("Error fetching AI response:", error);
@@ -66,7 +70,7 @@ export default function AllRoutes() {
         <ModalContent
           padding={"30px"}
           width="45vmax"
-          backgroundColor="purple"
+          backgroundColor="white"
           margin="auto"
           borderRadius="15px"
           position="fixed"
@@ -80,17 +84,16 @@ export default function AllRoutes() {
               padding={"20px"}
               fontSize="25px"
               fontWeight="800"
-              color="white"
+              color="black"
             >
               Resolve with AI
             </Text>
           </ModalHeader>
-          {/* <ModalCloseButton /> */}
           <ModalBody>
-            <VStack spacing={4}>
+            <VStack spacing={4} alignItems="center">
               <Flex>
                 <Input
-                  placeholder="Ask me anything..."
+                  placeholder="Enter you Docker File Code"
                   value={userInput}
                   onChange={handleInputChange}
                   height={"5vh"}
@@ -105,27 +108,27 @@ export default function AllRoutes() {
                   onClick={handleSubmit}
                   width={"11vmax"}
                   height={"5vh"}
+                  cursor={"pointer"}
                   border="none"
                   marginLeft="-1px"
-                  // borderRadius="10px"
                   backgroundColor="#a841b8"
                   color="white"
-                  // marginBottom={"2vmax"}
                   mt={4}
                 >
                   Submit
                 </Button>
               </Flex>
-              {aiResponse && (
-                <Text
-                  margin={"10px 0 10px 20px"}
-                  color="white"
-                  overflow-y={"scroll"}
-                  mt={4}
-                >
-                  {aiResponse}
-                </Text>
-              )}
+              <Text
+                color="black"
+                overflowY="auto"
+                maxHeight="200px"
+                width="100%"
+                padding="10px"
+                border="1px solid #ccc"
+                borderRadius="5px"
+              >
+                {aiResponse}
+              </Text>
             </VStack>
           </ModalBody>
 
@@ -133,7 +136,7 @@ export default function AllRoutes() {
             <Button
               justifyContent="center"
               width={"8vmax"}
-              marginTop={"7vmax"}
+              marginTop={"2vmax"}
               borderRadius="10px"
               height={"4vh"}
               border="none"

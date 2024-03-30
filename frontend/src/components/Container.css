@@ -32,6 +32,7 @@ list_item {
   white-space: nowrap;
   /* Prevent text wrapping */
 }
+
 .list_inner {
   display: flex;
   align-items: center;
@@ -45,6 +46,7 @@ list_item {
   border-bottom: none;
   /* Remove border from the last list item */
 }
+
 .red_circle {
   width: 20px;
   height: 20px;
@@ -60,12 +62,15 @@ list_item {
   border-radius: 50%;
   margin: auto;
 }
+
 .top-div {
   padding-top: 2vmax;
 }
+
 .mid-div {
   padding-top: 2vmax;
 }
+
 .crud-svg > img {
   width: 30px;
   height: 30px;
@@ -73,16 +78,18 @@ list_item {
   margin-right: 15px;
   cursor: pointer;
 }
+
 .head {
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.5vmax;
   margin-right: 30px;
 }
+
 .assess {
   display: flex;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding: 0 6vmax;
