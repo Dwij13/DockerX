@@ -3,6 +3,8 @@ import { IoArrowBack } from "react-icons/io5";
 import "./Container.css";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
+import image1  from "../assets/Frame.png"
+import image2  from "../assets/frame1.png"
 import { Button } from "@chakra-ui/button";
 
 export default function Container() {
@@ -101,6 +103,11 @@ export default function Container() {
       <div className="top-div">
         <div className="head">
           <IoArrowBack color="white" size="2rem" cursor="pointer" onClick={()=>navigator(-1)}/>
+          <div className="crud-svg">
+            <img onClick={restartContainer} src={image1} alt="crud" />
+            <img onClick={deleteContainer} src={image2} alt="crud" />
+            
+          </div>
           </div>
         <div className="list_group">
           <div className="list_inner">
